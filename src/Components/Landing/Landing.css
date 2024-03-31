@@ -35,7 +35,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
     transition: all 0.5s ease-in-out;
 }
 
@@ -173,7 +173,7 @@ section {
     border-radius: 5rem;
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: 0;
     transition: .2s ease;
     cursor: pointer;
 }
@@ -621,8 +621,8 @@ footer i:hover {
         flex-direction: column;
         align-items: center;
         overflow: hidden;
-        overflow: hidden;
         opacity: 0;
+        height: 0;
         transition: opacity 0.3s ease, transform 0.3s ease;
         box-shadow: 14px 14px 12px 5px rgba(0, 0, 0, 0.2);
     }
@@ -631,7 +631,12 @@ footer i:hover {
 
     .navbar-links.active {
         opacity: 1;
+        height: auto;
         transform: translateX(-85%) translateY(5%);
+    }
+
+    .navbar-links.active .navlink {
+        z-index: 1;
     }
 
     .navbarlinks {
@@ -648,7 +653,10 @@ footer i:hover {
         margin-bottom: 2vh;
         border-bottom: 1px solid black;
         text-align: center;
+        z-index: -1;
     }
+
+
 
     .menu-icon {
         display: block;
@@ -691,6 +699,11 @@ footer i:hover {
         height: 25rem;
         width: 25rem;
     }
+
+    .input-box input {
+        z-index: 0;
+    }
+
 
     section {
         min-height: 70vh;
