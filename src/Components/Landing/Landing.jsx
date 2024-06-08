@@ -2,12 +2,13 @@
 // Navbar.js
 import { useEffect, useState } from "react";
 import logo from "../../assets/favicon.ico";
-import Cv from "../../assets/Nabeel React Certificate.pdf";
+import Cv from "../../assets/NabeelHaiderResume.pdf";
 import NabeelPic from "../../assets/profile.jpg";
 import duckload from "../../assets/duckload.gif";
 import "./Landing.css"; // Import CSS file for styling
 import { Bounce, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -63,14 +64,19 @@ const Landing = () => {
   const toggleDescription2 = () => {
     setExpanded2(!expanded2);
   };
-  // useEffect(() => {
-  //   if (!expanded || !expanded1 || !expanded2) {
-  //     window.scrollTo({
-  //       top: document.getElementById("skills").offsetTop,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }, [expanded, expanded1, expanded2]);
+  const [expanded3, setExpanded3] = useState(false);
+
+  const toggleDescription3 = () => {
+    setExpanded3(!expanded3);
+  };
+  const [expanded4, setExpanded4] = useState(false);
+  const toggleDescription4 = () => {
+    setExpanded4(!expanded4);
+  };
+  const [expanded5, setExpanded5] = useState(false);
+  const toggleDescription5 = () => {
+    setExpanded5(!expanded5);
+  };
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -188,6 +194,17 @@ const Landing = () => {
                 </li>
                 <li className="navlink">
                   <a
+                    href="#workexperience"
+                    className={
+                      activeSection === "workexperience" ? "active" : ""
+                    }
+                    onClick={closeMenu}
+                  >
+                    Work Experience
+                  </a>
+                </li>
+                <li className="navlink">
+                  <a
                     href="#skills"
                     className={activeSection === "skills" ? "active" : ""}
                     onClick={closeMenu}
@@ -195,6 +212,7 @@ const Landing = () => {
                     Skills
                   </a>
                 </li>
+
                 <li className="navlink">
                   <a
                     href="#education"
@@ -204,6 +222,7 @@ const Landing = () => {
                     Education
                   </a>
                 </li>
+
                 <li className="navlink">
                   <a
                     href="#contact"
@@ -262,7 +281,7 @@ const Landing = () => {
               </a>
             </div>
 
-            <a href={Cv} download="Nabeel React Certificate.pdf">
+            <a href={Cv} download="NabeelHaiderResume.pdf">
               <button className="btn">Download CV</button>
             </a>
           </div>
@@ -330,7 +349,60 @@ const Landing = () => {
                 <i className="ri-linkedin-box-fill"></i>
               </a>
             </div>
-            {/* <button class="btn">Read More</button> */}
+          </div>
+        </section>
+        {/* EXPERIENCE-PAGE */}
+        <section className="workExperience" id="workexperience">
+          <h3 className="title">
+            <i className="ri-building-line"></i>
+            Work Experience
+          </h3>
+          <div className="work-container">
+            <div className="office">
+              <h5>
+                Currently Working As a Front End Devloper at Infoetec from
+                16/05/2023 - Present
+              </h5>
+
+              <Link to="https://www.infoetec.com/" target="blank">
+                <img src="companyblacklogo.png" alt="companyblacklogo" />
+              </Link>
+            </div>
+          </div>
+          <div className="projects">
+            <h3 className="title">
+              <i className="ri-file-code-line"></i>
+              Completed Projects
+            </h3>
+            <div className="projectContent">
+              <h5>
+                Created Website For My Company SIte and is deployed at this URL
+                https://www.infoetec.com/
+              </h5>
+              <Link to="https://www.infoetec.com/" target="blank">
+                <img src="companyblacklogo.png" alt="companyblacklogo" />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Website For An Entrepreneur Website was Related to Tech
+                in Agriculture deployed on below URL https://www.bagh-e.com/
+              </h5>
+              <Link to="https://www.bagh-e.com/" target="blank">
+                <img src="baghe.png" alt="companyblacklogo" />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Travel Destination Onlines Admin Panel Site It Includes
+                Hotel,Flights,Sightseens,Tours and Transfers Booking that are
+                handled by TDO's employees. URL for this is not site permitted
+                as its an Admin Panel.
+              </h5>
+              <Link to="https://www.tdonlines.com/" target="blank">
+                <img src="tdo.png" alt="companyblacklogo" />
+              </Link>
+            </div>
           </div>
         </section>
         {/* SKILL-PAGE */}
@@ -424,6 +496,108 @@ const Landing = () => {
               </p>
               <button className="btn read-more" onClick={toggleDescription2}>
                 {expanded2 ? "Read Less" : "Read More"}
+              </button>
+            </div>
+            <div className={`skill-content ${expanded3 ? "expanded" : ""}`}>
+              <i className="ri-git-merge-line">+</i>
+              <i className="ri-github-fill"></i>
+              <h5>GIT + GITHUB</h5>
+              <p className="short-description">
+                I have a strong proficiency in using Git commands and a deep
+                understanding of Git Flow and GitHub. Git Commands: I am skilled
+                in utilizing various Git commands for efficient version control,
+                including commit, branch ...
+              </p>
+              <p className="full-description">
+                I have a strong proficiency in using Git commands and a deep
+                understanding of Git Flow and GitHub. Git Commands: I am skilled
+                in utilizing various Git commands for efficient version control,
+                including commit, branch, merge, rebase, and reset. My expertise
+                allows me to manage and navigate repositories with ease,
+                ensuring seamless development workflows. Git Flow: I understand
+                and implement the Git Flow branching strategy to enhance project
+                organization. This includes using feature branches for
+                development, release branches for final preparations, and hotfix
+                branches for critical bug fixes, ensuring a structured and
+                reliable workflow. GitHub: I leverage GitHub for hosting
+                repositories, collaborating with team members, and managing
+                project tasks. My experience includes creating and managing pull
+                requests, conducting code reviews, and using GitHub Issues and
+                Projects for effective project management. Additionally, I
+                integrate with CI/CD pipelines to automate testing and
+                deployment processes. By combining these skills, I ensure robust
+                version control, efficient project management, and effective
+                team collaboration.
+              </p>
+              <button className="btn read-more" onClick={toggleDescription3}>
+                {expanded3 ? "Read Less" : "Read More"}
+              </button>
+            </div>
+            <div className={`skill-content ${expanded4 ? "expanded" : ""}`}>
+              <i className="ri-bootstrap-fill">+</i>
+              <i className="ri-tailwind-css-fill"></i>
+              <h5>BOOTSRAP + TAILWIND</h5>
+              <p className="short-description">
+                I am proficient in using Bootstrap and Tailwind CSS to create
+                responsive and visually appealing web interfaces. Bootstrap:
+                Utilizing Bootstrap to rapidly develop responsive websites with
+                a consistent design. Proficient...
+              </p>
+              <p className="full-description">
+                I am proficient in using Bootstrap and Tailwind CSS to create
+                responsive and visually appealing web interfaces. Bootstrap:
+                Utilizing Bootstrap to rapidly develop responsive websites with
+                a consistent design. Proficient in using its grid system,
+                pre-designed components, and utility classes to create modern
+                and mobile-first web applications. Experience includes
+                customizing Bootstrap to match specific design requirements and
+                integrating it seamlessly into various projects. Tailwind CSS:
+                Expertise in using Tailwind CSS for utility-first styling,
+                allowing for highly customizable and responsive designs.
+                Proficient in applying utility classes directly in HTML to style
+                components, enabling fast development and ensuring design
+                consistency. Capable of extending Tailwind with custom
+                configurations and integrating it with various front-end
+                frameworks. By combining these skills, I ensure robust version
+                control, efficient project management, and the creation of
+                responsive, visually appealing web applications.
+              </p>
+              <button className="btn read-more" onClick={toggleDescription4}>
+                {expanded4 ? "Read Less" : "Read More"}
+              </button>
+            </div>
+            <div className={`skill-content ${expanded5 ? "expanded" : ""}`}>
+              <i className="ri-nodejs-fill">+</i>
+              <i className="ri-database-2-fill"></i>
+              <h5>NODE.JS + MONOGO DB</h5>
+              <p className="short-description">
+                I have extensive experience in developing server-side
+                applications with Node.js and managing databases with MongoDB.
+                Node.js: Proficient in building scalable and efficient
+                server-side applications using Node.js....
+              </p>
+              <p className="full-description">
+                I have extensive experience in developing server-side
+                applications with Node.js and managing databases with MongoDB.
+                Node.js: Proficient in building scalable and efficient
+                server-side applications using Node.js. Experience includes
+                working with asynchronous programming, creating RESTful APIs,
+                and leveraging frameworks like Express.js to streamline
+                development. Capable of integrating Node.js applications with
+                various services and APIs to build robust backend systems.
+                MongoDB: Skilled in using MongoDB for data storage and
+                management in web applications. Experience includes designing
+                and implementing database schemas, performing CRUD operations,
+                and using MongoDB's aggregation framework to process data.
+                Proficient in integrating MongoDB with Node.js applications
+                using libraries like Mongoose for efficient database
+                interactions. By combining these skills, I ensure robust version
+                control, efficient project management, responsive and visually
+                appealing web applications, and scalable, efficient server-side
+                solutions with effective database management.
+              </p>
+              <button className="btn read-more" onClick={toggleDescription5}>
+                {expanded5 ? "Read Less" : "Read More"}
               </button>
             </div>
           </div>

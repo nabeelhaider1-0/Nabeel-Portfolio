@@ -339,6 +339,44 @@ section {
     margin-top: 1.5rem;
 }
 
+.office {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.office h5 {
+    font-size: 2rem;
+}
+
+.work-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.projects .title {
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+.projectContent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.projectContent h5 {
+    font-size: 2rem;
+    padding-right: 4rem;
+}
+
+.projectContent img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 .skill-container {
     display: flex;
     flex-wrap: wrap;
@@ -651,7 +689,7 @@ footer i:hover {
 
     .navlink {
         margin-bottom: 2vh;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid black !important;
         text-align: center;
         z-index: -1;
     }
@@ -707,6 +745,52 @@ footer i:hover {
 
     section {
         min-height: 70vh;
+    }
+
+    .work-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 4rem;
+    }
+
+    .office h5 {
+        font-size: 2rem;
+    }
+
+    .office img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .projects .title {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
+
+    .projectContent {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 4rem;
+    }
+
+    .projectContent h5 {
+        font-size: 2rem;
+        padding-right: 4rem;
+    }
+
+    .projectContent img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        margin-top: 4rem;
     }
 }
 
@@ -771,4 +855,57 @@ footer i:hover {
         border-radius: 4vw !important;
     }
 
+    .work-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .office {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .office h5 {
+        font-size: 2rem;
+        padding-right: 0rem !important;
+    }
+
+    .office img {
+        width: 50vw;
+        height: auto;
+        object-fit: contain;
+        display: flex;
+        margin: auto;
+    }
+
+    .projects .title {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
+
+    .projectContent {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .projectContent h5 {
+        font-size: 1.9rem;
+        padding-right: 0rem;
+    }
+
+    .projectContent img {
+        width: 40vw;
+        height: auto;
+        object-fit: contain;
+        display: flex;
+        margin: auto;
+    }
 }
