@@ -364,16 +364,30 @@ section {
     display: flex;
     justify-content: space-between;
     margin-top: 4rem;
+    width: 100%;
 }
 
 .projectContent h5 {
     font-size: 2rem;
-    padding-right: 4rem;
+    padding-right: 0rem;
+    width: 80%;
+}
+
+.projectContent a {
+    width: 20%;
 }
 
 .projectContent img {
-    width: 100%;
+    width: 60%;
     height: auto;
+    margin-left: 40%;
+    object-fit: contain;
+}
+
+.AIWriterImage {
+    width: 30% !important;
+    height: auto;
+    margin-left: 55% !important;
     object-fit: contain;
 }
 
@@ -888,7 +902,7 @@ footer i:hover {
         margin-top: 4rem;
     }
 
-    .projectContent {
+    /* .projectContent {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -907,5 +921,37 @@ footer i:hover {
         object-fit: contain;
         display: flex;
         margin: auto;
+    } */
+    .projectContent {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 4rem;
+        gap: 5rem;
+        width: 100%;
+    }
+
+    .projectContent h5 {
+        font-size: 2rem;
+        padding-right: 0rem;
+        width: 100%;
+    }
+
+    .projectContent a {
+        width: 100%;
+    }
+
+    .projectContent img {
+        width: 40%;
+        height: auto;
+        margin-left: 30%;
+        object-fit: contain;
+    }
+
+    .AIWriterImage {
+        width: 25% !important;
+        height: auto;
+        margin-left: 35% !important;
+        object-fit: contain;
     }
 }

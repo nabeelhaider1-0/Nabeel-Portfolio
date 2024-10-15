@@ -403,6 +403,32 @@ const Landing = () => {
                 <img src="tdo.png" alt="companyblacklogo" />
               </Link>
             </div>
+            <div className="projectContent">
+              <h5>
+                Created an AI Email Writer Website For the Infoetec Company
+                Deployed on below URL https://www.aimailwriters.com/
+              </h5>
+              <Link to="https://www.aimailwriters.com/" target="blank">
+                <img
+                  src="AIContentWriter.png"
+                  alt="companyblacklogo"
+                  className="AIWriterImage"
+                />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created an AI Writer Website For the Infoetec Company Deployed
+                on below URL https://www.autoaiwriter.com/
+              </h5>
+              <Link to="https://www.autoaiwriter.com/" target="blank">
+                <img
+                  src="AiLogo.png"
+                  alt="companyblacklogo"
+                  className="AIWriterImage"
+                />
+              </Link>
+            </div>
           </div>
         </section>
         {/* SKILL-PAGE */}
