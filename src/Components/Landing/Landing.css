@@ -10,11 +10,8 @@
     scroll-behavior: smooth;
 }
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
+
+
 
 html {
     font-size: 62.5%;
@@ -24,6 +21,14 @@ html {
 body {
     height: 100vh;
     background: #e2e2e2;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #111 #e2e2e2;
 }
 
 
@@ -363,6 +368,7 @@ section {
 .projectContent {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 4rem;
     width: 100%;
 }

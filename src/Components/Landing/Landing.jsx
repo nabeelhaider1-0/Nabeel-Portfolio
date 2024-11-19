@@ -394,13 +394,24 @@ const Landing = () => {
             </div>
             <div className="projectContent">
               <h5>
-                Created Travel Destination Onlines Admin Panel Site It Includes
+                Created INFO E TEC ONLINE Admin Panel Site It Includes
                 Hotel,Flights,Sightseens,Tours and Transfers Booking that are
-                handled by TDO's employees. URL for this is not site permitted
-                as its an Admin Panel.
+                handled by Infoetecs's employees. URL for this is not site
+                permitted as its an Admin Panel.
               </h5>
-              <Link to="https://www.tdonlines.com/" target="blank">
-                <img src="tdo.png" alt="companyblacklogo" />
+              <Link to="https://d2k3g3qc14533e.cloudfront.net/" target="blank">
+                <img src="infopurple.png" alt="infopurple" />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Escapra Webiste that Includes
+                Hotel,Flights,Umrah,Sightseens,Tours and Transfers for Business
+                to Customers For the Infoetec Company Deployed on below URL
+                https://www.escapra.com/
+              </h5>
+              <Link to="https://www.escapra.com/" target="blank">
+                <img src="escapra.png" alt="escapraBlackLogo" />
               </Link>
             </div>
             <div className="projectContent">
@@ -425,6 +436,19 @@ const Landing = () => {
                 <img
                   src="AiLogo.png"
                   alt="companyblacklogo"
+                  className="AIWriterImage"
+                />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Sound Wave Cleaner Website For the Infoetec Company
+                Deployed on below URL https://www.http://clearsoundcoach.com/
+              </h5>
+              <Link to="https://www.clearsoundcoach.com/" target="blank">
+                <img
+                  src="speakerCleaner.png"
+                  alt="speakerCleaner"
                   className="AIWriterImage"
                 />
               </Link>
