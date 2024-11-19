@@ -379,6 +379,12 @@ section {
     width: 80%;
 }
 
+.projectContent h5 a {
+    text-decoration: none;
+    margin-left: 0.6vw;
+    color: #5e0cd8;
+}
+
 .projectContent a {
     width: 20%;
 }

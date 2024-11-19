@@ -377,7 +377,9 @@ const Landing = () => {
             <div className="projectContent">
               <h5>
                 Created Website For My Company SIte and is deployed at this URL
-                https://www.infoetec.com/
+                <Link to="https://www.infoetec.com/" target="blank">
+                  https://www.infoetec.com/
+                </Link>
               </h5>
               <Link to="https://www.infoetec.com/" target="blank">
                 <img src="companyblacklogo.png" alt="companyblacklogo" />
@@ -386,7 +388,10 @@ const Landing = () => {
             <div className="projectContent">
               <h5>
                 Created Website For An Entrepreneur Website was Related to Tech
-                in Agriculture deployed on below URL https://www.bagh-e.com/
+                in Agriculture deployed on below URL
+                <Link to="https://www.bagh-e.com/" target="blank">
+                  https://www.bagh-e.com/
+                </Link>
               </h5>
               <Link to="https://www.bagh-e.com/" target="blank">
                 <img src="baghe.png" alt="companyblacklogo" />
@@ -408,7 +413,9 @@ const Landing = () => {
                 Created Escapra Webiste that Includes
                 Hotel,Flights,Umrah,Sightseens,Tours and Transfers for Business
                 to Customers For the Infoetec Company Deployed on below URL
-                https://www.escapra.com/
+                <Link to="https://www.escapra.com/" target="blank">
+                  https://www.escapra.com/
+                </Link>
               </h5>
               <Link to="https://www.escapra.com/" target="blank">
                 <img src="escapra.png" alt="escapraBlackLogo" />
@@ -417,7 +424,10 @@ const Landing = () => {
             <div className="projectContent">
               <h5>
                 Created an AI Email Writer Website For the Infoetec Company
-                Deployed on below URL https://www.aimailwriters.com/
+                Deployed on below URL{" "}
+                <Link to="https://www.aimailwriters.com/" target="blank">
+                  https://www.aimailwriters.com/
+                </Link>
               </h5>
               <Link to="https://www.aimailwriters.com/" target="blank">
                 <img
@@ -430,7 +440,10 @@ const Landing = () => {
             <div className="projectContent">
               <h5>
                 Created an AI Writer Website For the Infoetec Company Deployed
-                on below URL https://www.autoaiwriter.com/
+                on below URL{" "}
+                <Link to="https://www.autoaiwriter.com/" target="blank">
+                  https://www.autoaiwriter.com/
+                </Link>
               </h5>
               <Link to="https://www.autoaiwriter.com/" target="blank">
                 <img
@@ -443,7 +456,10 @@ const Landing = () => {
             <div className="projectContent">
               <h5>
                 Created Sound Wave Cleaner Website For the Infoetec Company
-                Deployed on below URL https://www.http://clearsoundcoach.com/
+                Deployed on below URL{" "}
+                <Link to="https://www.clearsoundcoach.com/" target="blank">
+                  https://www.http://clearsoundcoach.com/
+                </Link>
               </h5>
               <Link to="https://www.clearsoundcoach.com/" target="blank">
                 <img
