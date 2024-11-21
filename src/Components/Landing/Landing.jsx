@@ -458,7 +458,7 @@ const Landing = () => {
                 Created Sound Wave Cleaner Website For the Infoetec Company
                 Deployed on below URL{" "}
                 <Link to="https://www.clearsoundcoach.com/" target="blank">
-                  https://www.http://clearsoundcoach.com/
+                  https://www.clearsoundcoach.com/
                 </Link>
               </h5>
               <Link to="https://www.clearsoundcoach.com/" target="blank">
