@@ -252,33 +252,56 @@ const Landing = () => {
               into reality.
             </p>
             <div className="social-media">
-              <a
-                href="https://www.facebook.com/nabeelhaider1.o?mibextid=ZbWKwL"
-                target="_blank"
-              >
-                <i className="ri-facebook-fill"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/nabeelhaider1.0?igsh=MW04c2tvNDQ2ZnhvNw=="
-                target="_blank"
-              >
-                <i className="ri-instagram-line"></i>
-              </a>
-              <a
-                href="https://youtube.com/@nabeelhaider1.0?si=8-BNeMve5i0bMDik"
-                target="_blank"
-              >
-                <i className="ri-youtube-fill"></i>
-              </a>
-              <a href="https://x.com/nabeelhaider1_0?s=09" target="_blank">
-                <i className="ri-twitter-x-fill"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nabeel-haider-76416818b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"
-              >
-                <i className="ri-linkedin-box-fill"></i>
-              </a>
+              <div className="icon">
+                <span className="tooltip">Facebook</span>
+                <a
+                  href="https://www.facebook.com/nabeelhaider1.o?mibextid=ZbWKwL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-facebook-fill"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">Instagram</span>
+                <a
+                  href="https://www.instagram.com/nabeelhaider1.0?igsh=MW04c2tvNDQ2ZnhvNw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-instagram-line"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">YouTube</span>
+                <a
+                  href="https://youtube.com/@nabeelhaider1.0?si=8-BNeMve5i0bMDik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-youtube-fill"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">Twitter</span>
+                <a
+                  href="https://x.com/nabeelhaider1_0?s=09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-twitter-x-fill"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/nabeel-haider-76416818b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-linkedin-box-fill"></i>
+                </a>
+              </div>
             </div>
 
             <a href={Cv} download="NabeelHaiderResume.pdf">
@@ -321,33 +344,56 @@ const Landing = () => {
               exciting journey together!
             </p>
             <div className="social-media">
-              <a
-                href="https://www.facebook.com/nabeelhaider1.o?mibextid=ZbWKwL"
-                target="_blank"
-              >
-                <i className="ri-facebook-fill"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/nabeelhaider1.0?igsh=MW04c2tvNDQ2ZnhvNw=="
-                target="_blank"
-              >
-                <i className="ri-instagram-line"></i>
-              </a>
-              <a
-                href="https://youtube.com/@nabeelhaider1.0?si=8-BNeMve5i0bMDik"
-                target="_blank"
-              >
-                <i className="ri-youtube-fill"></i>
-              </a>
-              <a href="https://x.com/nabeelhaider1_0?s=09" target="_blank">
-                <i className="ri-twitter-x-fill"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nabeel-haider-76416818b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"
-              >
-                <i className="ri-linkedin-box-fill"></i>
-              </a>
+              <div className="icon">
+                <span className="tooltip">Facebook</span>
+                <a
+                  href="https://www.facebook.com/nabeelhaider1.o?mibextid=ZbWKwL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-facebook-fill"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">Instagram</span>
+                <a
+                  href="https://www.instagram.com/nabeelhaider1.0?igsh=MW04c2tvNDQ2ZnhvNw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-instagram-line"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">YouTube</span>
+                <a
+                  href="https://youtube.com/@nabeelhaider1.0?si=8-BNeMve5i0bMDik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-youtube-fill"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">Twitter</span>
+                <a
+                  href="https://x.com/nabeelhaider1_0?s=09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-twitter-x-fill"></i>
+                </a>
+              </div>
+              <div className="icon">
+                <span className="tooltip">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/nabeel-haider-76416818b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="ri-linkedin-box-fill"></i>
+                </a>
+              </div>
             </div>
           </div>
         </section>
