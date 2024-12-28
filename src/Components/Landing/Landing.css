@@ -157,11 +157,15 @@ section {
 
 .social-media i {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2.5rem;
     color: #424242;
     border: 0.2rem solid #424242;
     border-radius: 50%;
-    padding: 0.5rem;
+    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -177,7 +181,6 @@ section {
     top: 0rem;
     left: 50%;
     transform: translateX(-50%) scale(0.8);
-    /* Initial smaller size for bounce */
     background-color: #424242;
     color: #fff;
     font-size: 1.2rem;
@@ -579,9 +582,15 @@ textarea {
     margin: .7rem 0;
     border-radius: .8rem;
     transition: .3s ease;
+    outline: none;
 }
 
 input::placeholder {
+    font-size: 1.5rem;
+    letter-spacing: .02rem;
+}
+
+textarea::placeholder {
     font-size: 1.5rem;
     letter-spacing: .02rem;
 }
@@ -590,18 +599,8 @@ input::placeholder {
     width: 49%;
 }
 
-input:focus,
-input:invalid {
-    border: .2rem solid #424242;
-}
-
 textarea {
     resize: none;
-}
-
-textarea:focus,
-textarea:invalid {
-    border: .2rem solid #424242;
 }
 
 .contact .btn {
@@ -648,9 +647,33 @@ footer i:hover {
 
 .loader {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: auto;
+    justify-content: center;
+    padding-top: 12rem;
+    color: grey;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 15rem;
+    opacity: 0.8;
+}
+
+.loader:before {
+    content: "{";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+}
+
+.loader:after {
+    content: "}";
+    display: inline-block;
+    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
 }
 
 .toast-custom {

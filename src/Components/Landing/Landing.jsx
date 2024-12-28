@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/favicon.ico";
 import Cv from "../../assets/NabeelHaiderResume.pdf";
 import NabeelPic from "../../assets/profile.jpg";
-import duckload from "../../assets/duckload.gif";
+// import duckload from "../../assets/duckload.gif";
 import "./Landing.css"; // Import CSS file for styling
 import { Bounce, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -774,7 +774,7 @@ const Landing = () => {
             CONTACT ME
           </h3>
           {isLoading ? (
-            <img src={duckload} className="loader" alt="Loading..." /> // Display loading GIF if loading
+            <span className="loader"></span>
           ) : (
             <form onSubmit={handleSubmit}>
               <div className={`input-box ${errors.fullName ? "error" : ""}`}>
