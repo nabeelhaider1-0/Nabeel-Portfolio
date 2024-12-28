@@ -199,7 +199,7 @@ section {
     height: 0.6rem;
     width: 0.6rem;
     background: #424242;
-    bottom: -0.3rem;
+    bottom: -0.26rem;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
