@@ -241,7 +241,7 @@ const Landing = () => {
         </nav>
         <section id="home" className="home">
           <div className="text-content">
-            <h2>Nabeel Haider</h2>
+            <h2>Nabeel Haideer</h2>
             <h5>WEBSITE DEVELOPER</h5>
             <p>
               Passionate about creating engaging and user-friendly websites, I
