@@ -443,17 +443,7 @@ const Landing = () => {
                 <img src="baghe.png" alt="companyblacklogo" />
               </Link>
             </div>
-            <div className="projectContent">
-              <h5>
-                Created INFO E TEC ONLINE Admin Panel Site It Includes
-                Hotel,Flights,Sightseens,Tours and Transfers Booking that are
-                handled by Infoetecs's employees. URL for this is not site
-                permitted as its an Admin Panel.
-              </h5>
-              <Link to="https://d2k3g3qc14533e.cloudfront.net/" target="blank">
-                <img src="infopurple.png" alt="infopurple" />
-              </Link>
-            </div>
+
             <div className="projectContent">
               <h5>
                 Created Escapra Webiste that Includes
@@ -465,6 +455,33 @@ const Landing = () => {
               </h5>
               <Link to="https://www.escapra.com/" target="blank">
                 <img src="escapra.png" alt="escapraBlackLogo" />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Escapra Trips DMC Webiste that Includes
+                Hotel,Flights,Umrah,Sightseens,Tours and Transfers for DMC
+                Deployed on below URL
+                <Link to="https://stage.escapratrips.com/" target="blank">
+                  https://stage.escapratrips.com/
+                </Link>
+              </h5>
+              <Link to="https://stage.escapratrips.com/" target="blank">
+                <img src="escapra.png" alt="escapraBlackLogo" />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Escapra's Back Office like Admin Panel Site. It Includes
+                Hotel,Flights,Sightseens,Tours and Transfers Booking that are
+                handled by Escapra Back office employees. URL for this is
+                <Link to="https://www.tdo-beta.escapra.com/" target="_blank">
+                  https://www.tdo-beta.escapra.com/
+                </Link>{" "}
+                but site permitted as its an Admin Panel.
+              </h5>
+              <Link to="https://www.tdo-beta.escapra.com/" target="blank">
+                <img src="escapra.png" alt="infopurple" />
               </Link>
             </div>
             <div className="projectContent">
