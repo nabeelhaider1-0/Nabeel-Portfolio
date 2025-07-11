@@ -318,7 +318,7 @@ const Landing = () => {
           <div className="about-img-cover">
             <div className="image-content">
               <h2>Nabeel Haider</h2>
-              <h5>WEBSITE DEVELOPER</h5>
+              <h5>REACT DEVELOPER</h5>
               <img src={NabeelPic} alt="NabeelPic" />
             </div>
           </div>
