@@ -240,7 +240,7 @@ const Landing = () => {
         <section id="home" className="home">
           <div className="text-content">
             <h2>Nabeel Haider</h2>
-            <h5>WEBSITE DEVELOPER</h5>
+            <h5>REACT DEVELOPER</h5>
             <p>
               Passionate about creating engaging and user-friendly websites, I
               strive to bring innovative ideas to life through code. With a keen
