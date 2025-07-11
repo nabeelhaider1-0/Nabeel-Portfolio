@@ -1,11 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-// Navbar.js
 import { useEffect, useState } from "react";
 import logo from "../../assets/favicon.ico";
 import Cv from "../../assets/NabeelHaiderResume.pdf";
 import NabeelPic from "../../assets/profile.jpg";
-// import duckload from "../../assets/duckload.gif";
-import "./Landing.css"; // Import CSS file for styling
+import "./Landing.css";
 import { Bounce, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
