@@ -500,6 +500,22 @@ const Landing = () => {
             </div>
             <div className="projectContent">
               <h5>
+                Created Taqwa Website For the Infoetec Company Deployed on below
+                URL{" "}
+                <Link to="https://taqwa.online/" target="blank">
+                  https://taqwa.online/
+                </Link>
+              </h5>
+              <Link to="https://taqwa.online/" target="blank">
+                <img
+                  src="taqwa.png"
+                  alt="companyblacklogo"
+                  className="taqwaImage"
+                />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
                 Created an AI Writer Website For the Infoetec Company Deployed
                 on below URL{" "}
                 <Link to="https://www.autoaiwriter.com/" target="blank">
