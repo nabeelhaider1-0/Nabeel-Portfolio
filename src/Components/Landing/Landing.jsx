@@ -473,12 +473,12 @@ const Landing = () => {
                 Created Escapra's Back Office like Admin Panel Site. It Includes
                 Hotel,Flights,Sightseens,Tours and Transfers Booking that are
                 handled by Escapra Back office employees. URL for this is
-                <Link to="https://www.tdo-beta.escapra.com/" target="_blank">
-                  https://www.tdo-beta.escapra.com/
+                <Link to="https://admin.escapra.com/" target="_blank">
+                  https://admin.escapra.com/
                 </Link>{" "}
                 but site permitted as its an Admin Panel.
               </h5>
-              <Link to="https://www.tdo-beta.escapra.com/" target="blank">
+              <Link to="https://admin.escapra.com/" target="blank">
                 <img src="escapra.png" alt="infopurple" />
               </Link>
             </div>
@@ -525,6 +525,22 @@ const Landing = () => {
               <Link to="https://pdfflows.space/" target="blank">
                 <img
                   src="imageToPdf.png"
+                  alt="companyblacklogo"
+                  className="taqwaImage"
+                />
+              </Link>
+            </div>
+            <div className="projectContent">
+              <h5>
+                Created Speed On VPN Website For the Infoetec Company Deployed
+                on below URL{" "}
+                <Link to="https://speedonvps.space/" target="blank">
+                  https://speedonvps.space/
+                </Link>
+              </h5>
+              <Link to="https://speedonvps.space/" target="blank">
+                <img
+                  src="speedOn.png"
                   alt="companyblacklogo"
                   className="taqwaImage"
                 />
