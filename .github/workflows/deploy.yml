@@ -44,10 +44,15 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Move files to root directory
+      - name: Move index.html to the root (if not already in root)
         run: |
-          # Move index.html to the root
-          mv ./dist/index.html ./dist/assets/* ./dist/
+          if [ ! -f ./dist/index.html ]; then
+            mv ./dist/index.html ./dist/
+          fi
+
+      - name: Move assets folder (CSS, JS, images) to the root
+        run: |
+          mv ./dist/assets/* ./dist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
