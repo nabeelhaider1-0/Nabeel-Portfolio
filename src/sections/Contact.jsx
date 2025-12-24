@@ -27,7 +27,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Location",
     value: "Talagang ,Punjab, Pakistan",
-    href: "#",
+    href: "https://maps.app.goo.gl/CWwsDTGjPWt9tu4h8",
   },
 ];
 
@@ -218,6 +218,7 @@ export const Contact = () => {
                   <a
                     key={i}
                     href={item.href}
+                    target="_blank"
                     className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
