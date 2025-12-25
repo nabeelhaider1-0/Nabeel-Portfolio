@@ -90,7 +90,7 @@ export const Hero = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 className="text-[2.5rem] md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
                 Crafting <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with
@@ -123,8 +123,10 @@ export const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
+            <div className="flex items-center sm:gap-4 gap-1 animate-fade-in animation-delay-400">
+              <span className="sm:text-sm text-xs text-muted-foreground">
+                Follow me:{" "}
+              </span>
               {[
                 { icon: Github, href: "https://github.com/nabeelhaider1-0" },
                 {
