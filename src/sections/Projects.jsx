@@ -8,7 +8,7 @@ const projects = [
       "A Travwl booking platform that offers personalized itineraries, seamless booking experiences, and real-time updates for travelers.",
     image: "/projects/project1.png",
     tags: ["React", "PostgreSQL", "NodeJS", "Redis", "AWS", "Revolut"],
-    link: "#",
+    link: "https://staging.escapra.com/",
     github: "#",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
       "Recharts",
       "Docker",
     ],
-    link: "#",
+    link: "https://admin.stg.escapra.com/",
     github: "#",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
       "A digital marketing campaign management tool for travel agencies, featuring automated content creation, performance tracking, and customer engagement analytics.",
     image: "/projects/project3.png",
     tags: ["React", "Tailwind"],
-    link: "#",
+    link: "https://stage.escapratrips.com/",
     github: "#",
   },
   {
@@ -46,7 +46,7 @@ const projects = [
       "A modern and responsive company website for Infoetec, showcasing their services, portfolio, and client testimonials with a sleek design and intuitive navigation.",
     image: "/projects/project4.png",
     tags: ["React", "Clandely", "Framer Motion", "GSAP", "AWS", "i18n"],
-    link: "#",
+    link: "https://infoetec.com/",
     github: "#",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
       "Bagh-e is a tech-based, Shariah-compliant platform that aims to empower farmers in agri-based developing countries. We provide innovative financing solutions, crop optimization guidance, and direct sales connections to enhance agricultural practices and economic growth.",
     image: "/projects/project5.png",
     tags: ["React", "Framer Motion", "GSAP", "AWS"],
-    link: "#",
+    link: "https://www.bagh-e.com/",
     github: "#",
   },
   {
@@ -64,7 +64,7 @@ const projects = [
       "Taqwa is an innovative Islamic app that combines modern technology with traditional values to provide users with a comprehensive platform for spiritual growth, community engagement, and access to Islamic resources.",
     image: "/projects/project6.png",
     tags: ["React", "Tailwind"],
-    link: "#",
+    link: "https://taqwa.online/",
     github: "#",
   },
   {
@@ -73,7 +73,7 @@ const projects = [
       "An AI-powered email writing assistant that helps users craft professional and effective emails quickly and easily, using advanced natural language processing techniques.",
     image: "/projects/project7.png",
     tags: ["HTML", "CSS", "JavaScript", "SwiperJS", "Lenis"],
-    link: "#",
+    link: "https://www.aimailwriters.com/",
     github: "#",
   },
   {
@@ -82,7 +82,7 @@ const projects = [
       "A user-friendly web application that allows users to easily convert images to PDF format, with options for customization and batch processing.",
     image: "/projects/project8.png",
     tags: ["React", "Tailwind"],
-    link: "#",
+    link: "https://pdfflows.space/",
     github: "#",
   },
   {
@@ -91,7 +91,7 @@ const projects = [
       "A sleek and modern website for SpeedOn VPN, highlighting its features, pricing plans, and user testimonials, designed to attract and convert visitors into customers.",
     image: "/projects/project9.png",
     tags: ["React", "Tailwind"],
-    link: "#",
+    link: "https://speedonvps.space/",
     github: "#",
   },
   {
@@ -100,7 +100,7 @@ const projects = [
       "An AI-powered essay writing tool that assists students and professionals in generating well-structured and coherent essays on various topics, enhancing their writing skills and productivity.",
     image: "/projects/project10.png",
     tags: ["HTML", "CSS", "JavaScript", "SwiperJS", "Lenis"],
-    link: "#",
+    link: "https://nabeelhaider1-0.github.io/ai-writer/",
     github: "#",
   },
   {
@@ -109,7 +109,7 @@ const projects = [
       "A visually appealing website for Sound Wave Speakers, showcasing their innovative audio products, features, and customer reviews, designed to enhance user experience and drive sales.",
     image: "/projects/project11.png",
     tags: ["HTML", "CSS", "JavaScript", "Lenis"],
-    link: "#",
+    link: "https://nabeelhaider1-0.github.io/speaker-cleaner/",
     github: "#",
   },
   {
@@ -118,7 +118,7 @@ const projects = [
       "A cutting-edge web application that converts spoken language into written text in real-time, utilizing advanced speech recognition technology for accuracy and efficiency.",
     image: "/projects/project12.png",
     tags: ["HTML", "CSS", "JavaScript", "SwiperJS", "Lenis"],
-    link: "#",
+    link: "https://nabeelhaider1-0.github.io/speech-to-text/",
     github: "#",
   },
 ];
@@ -179,6 +179,7 @@ export const Projects = () => {
                   <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <a
                       href={project.link}
+                      target="_blank"
                       className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                     >
                       <ArrowUpRight className="w-5 h-5" />
