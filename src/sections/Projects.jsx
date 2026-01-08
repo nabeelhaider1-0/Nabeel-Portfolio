@@ -3,12 +3,12 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { useState } from "react";
 const projects = [
   {
-    title: "Escapra B2C",
+    title: "Muqamat",
     description:
-      "A Travwl booking platform that offers personalized itineraries, seamless booking experiences, and real-time updates for travelers.",
+      "A Travel booking platform that offers personalized itineraries, seamless booking experiences, and real-time updates for travelers.",
     image: "/projects/project1.png",
     tags: ["React", "PostgreSQL", "NodeJS", "Redis", "AWS", "Revolut"],
-    link: "https://staging.escapra.com/",
+    link: "https://staging.muqamat.com/",
     github: "#",
   },
   {
@@ -21,6 +21,7 @@ const projects = [
       "PostgreSQL",
       "NodeJS",
       "Redis",
+      "Redux",
       "AWS",
       "Revolut",
       "TypeScript",
