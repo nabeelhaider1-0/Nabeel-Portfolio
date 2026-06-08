@@ -1,18 +1,57 @@
-import { ArrowUpRight, Github, Minus, Plus } from "lucide-react";
+import { ArrowUpRight, Minus, Plus } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { useState } from "react";
 const projects = [
+  {
+    title: "TDO B2B",
+    description:
+      "A B2B travel booking platform that offers a wide range of travel services, including flights, hotels, and car rentals, with a user-friendly interface and seamless booking experience.",
+    image: "/projects/project13.png",
+    tags: [
+      "React",
+      "PostgreSQL",
+      "NodeJS",
+      "Redis",
+      "AWS",
+      "Revolut",
+      "TypeScript",
+      "Docker",
+      "Recharts",
+      "TailwindCSS",
+      "PostgreSQL",
+    ],
+    link: "https://www.tdonlines.com/",
+  },
+  {
+    title: "TDO B2B BackOffice",
+    description:
+      "A comprehensive back-office management system for travel agencies, featuring real-time booking tracking, customer management, and analytics.",
+    image: "/projects/project14.png",
+    tags: [
+      "React",
+      "PostgreSQL",
+      "NodeJS",
+      "Redis",
+      "AWS",
+      "Revolut",
+      "TypeScript",
+      "Docker",
+      "Recharts",
+      "TailwindCSS",
+      "PostgreSQL",
+    ],
+    link: "https://www.admin.muqamat.com/",
+  },
   {
     title: "Muqamat",
     description:
       "A Travel booking platform that offers personalized itineraries, seamless booking experiences, and real-time updates for travelers.",
     image: "/projects/project1.png",
     tags: ["React", "PostgreSQL", "NodeJS", "Redis", "AWS", "Revolut"],
-    link: "https://staging.muqamat.com/",
-    github: "#",
+    link: "https://muqamat.com/",
   },
   {
-    title: "Escapra BackOffice",
+    title: "Muqamat BackOffice",
     description:
       "A comprehensive back-office management system for travel agencies, featuring real-time booking tracking, customer management, and analytics.",
     image: "/projects/project2.png",
@@ -29,18 +68,9 @@ const projects = [
       "Recharts",
       "Docker",
     ],
-    link: "https://admin.stg.escapra.com/",
-    github: "#",
+    link: "https://www.admin.muqamat.com/",
   },
-  {
-    title: "Escapra Trips (DMC)",
-    description:
-      "A digital marketing campaign management tool for travel agencies, featuring automated content creation, performance tracking, and customer engagement analytics.",
-    image: "/projects/project3.png",
-    tags: ["React", "Tailwind"],
-    link: "https://stage.escapratrips.com/",
-    github: "#",
-  },
+
   {
     title: "Infoetec Company Site",
     description:
@@ -48,7 +78,6 @@ const projects = [
     image: "/projects/project4.png",
     tags: ["React", "Clandely", "Framer Motion", "GSAP", "AWS", "i18n"],
     link: "https://infoetec.com/",
-    github: "#",
   },
   {
     title: "Bagh-e Website",
@@ -57,7 +86,6 @@ const projects = [
     image: "/projects/project5.png",
     tags: ["React", "Framer Motion", "GSAP", "AWS"],
     link: "https://www.bagh-e.com/",
-    github: "#",
   },
   {
     title: "Taqwa Website",
@@ -66,7 +94,6 @@ const projects = [
     image: "/projects/project6.png",
     tags: ["React", "Tailwind"],
     link: "https://taqwa.online/",
-    github: "#",
   },
   {
     title: "AI Email Writer Website",
@@ -75,7 +102,6 @@ const projects = [
     image: "/projects/project7.png",
     tags: ["HTML", "CSS", "JavaScript", "SwiperJS", "Lenis"],
     link: "https://www.aimailwriters.com/",
-    github: "#",
   },
   {
     title: "Image To PDF Website",
@@ -84,7 +110,6 @@ const projects = [
     image: "/projects/project8.png",
     tags: ["React", "Tailwind"],
     link: "https://pdfflows.space/",
-    github: "#",
   },
   {
     title: "SpeedOn VPN Website",
@@ -93,7 +118,14 @@ const projects = [
     image: "/projects/project9.png",
     tags: ["React", "Tailwind"],
     link: "https://speedonvps.space/",
-    github: "#",
+  },
+  {
+    title: "Escapra Trips (DMC)",
+    description:
+      "A digital marketing campaign management tool for travel agencies, featuring automated content creation, performance tracking, and customer engagement analytics.",
+    image: "/projects/project3.png",
+    tags: ["React", "Tailwind"],
+    link: "https://stage.escapratrips.com/",
   },
   {
     title: "AI Essay Writer Website",
@@ -102,7 +134,6 @@ const projects = [
     image: "/projects/project10.png",
     tags: ["HTML", "CSS", "JavaScript", "SwiperJS", "Lenis"],
     link: "https://nabeelhaider1-0.github.io/ai-writer/",
-    github: "#",
   },
   {
     title: "Sound Wave Speaker Website",
@@ -111,7 +142,6 @@ const projects = [
     image: "/projects/project11.png",
     tags: ["HTML", "CSS", "JavaScript", "Lenis"],
     link: "https://nabeelhaider1-0.github.io/speaker-cleaner/",
-    github: "#",
   },
   {
     title: "Speech to Text Website",
@@ -120,7 +150,6 @@ const projects = [
     image: "/projects/project12.png",
     tags: ["HTML", "CSS", "JavaScript", "SwiperJS", "Lenis"],
     link: "https://nabeelhaider1-0.github.io/speech-to-text/",
-    github: "#",
   },
 ];
 
@@ -173,7 +202,7 @@ export const Projects = () => {
                   />
                   <div
                     className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
+                bg-linear-to-t from-card via-card/50
                  to-transparent opacity-60"
                   />
                   {/* Overlay Links */}
@@ -181,15 +210,10 @@ export const Projects = () => {
                     <a
                       href={project.link}
                       target="_blank"
+                      rel="noreferrer noopener"
                       className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                     >
                       <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                    <a
-                      href={project.github}
-                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                    >
-                      <Github className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
@@ -200,12 +224,14 @@ export const Projects = () => {
                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <ArrowUpRight
-                      className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                    />
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-muted-foreground group-hover:text-primary transition-all"
+                    >
+                      <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    </a>
                   </div>
                   <p className="text-muted-foreground text-sm">
                     {project.description}

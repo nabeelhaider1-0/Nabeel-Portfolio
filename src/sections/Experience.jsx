@@ -1,6 +1,35 @@
 const experiences = [
   {
     period: "2025 — Present",
+    role: "Full Stack Engineer",
+    company: "Infoetec Company",
+    description:
+      "Leading the development of a cutting-edge fintech platform, responsible for both frontend and backend architecture. Implemented scalable microservices, optimized performance, and integrated advanced analytics features.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "TypeScript",
+      "Next.js",
+      "Redux",
+      "AWS",
+      "Figma",
+      " TailwindCSS",
+      "Shadcn UI",
+      "ReCharts",
+      "Framer Motion",
+      "GSAP",
+      "Vite",
+      "API integrations",
+      "Vercel",
+    ],
+    current: true,
+  },
+  {
+    period: "2025 — 2025",
     role: "Senior Frontend Engineer",
     company: "Techfy Solutions",
     description:
@@ -115,7 +144,7 @@ export const Experience = () => {
 
         {/* Timeline */}
         <div className="relative">
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
 
           {/* Experience Items */}
           <div className="space-y-12">

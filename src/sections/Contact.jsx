@@ -55,7 +55,7 @@ export const Contact = () => {
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
-          "EmailJS configuration is missing. Please check your environment variables."
+          "EmailJS configuration is missing. Please check your environment variables.",
         );
       }
 
@@ -67,7 +67,7 @@ export const Contact = () => {
           email: formData.email,
           message: formData.message,
         },
-        publicKey
+        publicKey,
       );
 
       setSubmitStatus({
@@ -92,7 +92,7 @@ export const Contact = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
@@ -110,8 +110,8 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 sm:max-w-5xl lg:mx-auto">
-          <div className="glass sm:w-auto w-[89vw] sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+        <div className="mx-auto grid max-w-5xl justify-items-center lg:grid-cols-2 gap-12">
+          <div className="glass w-full max-w-3xl sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -208,8 +208,8 @@ export const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 sm:w-auto animate-fade-in animation-delay-400">
-            <div className="glass sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+          <div className="space-y-6 w-full max-w-xl animate-fade-in animation-delay-400">
+            <div className="glass w-full sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
