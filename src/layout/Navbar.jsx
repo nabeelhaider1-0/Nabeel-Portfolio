@@ -12,6 +12,7 @@ const navLinks = [
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,27 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = ["home", ...navLinks.map((link) => link.href.slice(1))]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
@@ -32,6 +54,11 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsMobileMenuOpen(false);
+            window.lenis?.scrollTo(0, { duration: 1 });
+          }}
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
           NH<span className="text-primary">.</span>
@@ -44,7 +71,11 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                className={`px-4 py-2 text-sm rounded-full transition-all ${
+                  activeSection === link.href.slice(1)
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-surface"
+                }`}
               >
                 {link.label}
               </a>
@@ -77,7 +108,11 @@ export const Navbar = () => {
                 href={link.href}
                 key={index}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground py-2"
+                className={`text-lg py-2 transition-all ${
+                  activeSection === link.href.slice(1)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
               </a>

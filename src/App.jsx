@@ -22,7 +22,12 @@ function App() {
     };
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    window.lenis = lenis;
+
+    return () => {
+      delete window.lenis;
+      lenis.destroy();
+    };
   }, []);
 
   return (

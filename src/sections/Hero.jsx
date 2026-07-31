@@ -49,7 +49,7 @@ export const Hero = () => {
     generateRandomDots();
   }, []); // Empty array means this effect runs once when the component mounts
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
         <img

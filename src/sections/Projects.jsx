@@ -41,7 +41,7 @@ const projects = [
       "TailwindCSS",
       "PostgreSQL",
     ],
-    link: "https://www.admin.muqamat.com/",
+    link: "https://www.admin.tdonlines.com/",
   },
   {
     title: "Muqamat",
@@ -159,7 +159,18 @@ export const Projects = () => {
   const projectsToShow = showAll ? projects : projects.slice(0, 4); // Show all or just first 4 projects
 
   const handleToggleShow = () => {
-    setShowAll(!showAll);
+    const expanding = !showAll;
+    setShowAll(expanding);
+
+    if (expanding) return;
+
+    const section = document.getElementById("projects");
+    const lenis = window.lenis;
+    if (lenis) {
+      lenis.scrollTo(section, { offset: -24, duration: 0.8 });
+    } else {
+      section?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
@@ -198,7 +209,7 @@ export const Projects = () => {
               <Reveal key={idx} delay={0.05 * (idx % 2)}>
                 <div className="group glass rounded-2xl overflow-hidden h-full">
                   {/* Image */}
-                  <div className="relative overflow-hidden aspect-auto">
+                  <div className="relative overflow-hidden aspect-21/10">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -258,6 +269,7 @@ export const Projects = () => {
           {/* Show More/Show Less Button */}
           <Reveal className="text-center mt-12" delay={0.3}>
             <AnimatedBorderButton
+              id="projects-toggle"
               onClick={handleToggleShow}
               className="p-3 rounded-full glass hover:bg-primary
                 hover:text-primary-foreground transition-all"
@@ -268,7 +280,7 @@ export const Projects = () => {
                 </>
               ) : (
                 <>
-                  View Less Projects <Plus className="w-5 h-5" />
+                  View More Projects <Plus className="w-5 h-5" />
                 </>
               )}
             </AnimatedBorderButton>
