@@ -1,10 +1,5 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
-
-const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-];
+import { SocialLink } from "@/components/SocialLink";
+import { socialLinks } from "@/data/socialLinks";
 
 const footerLinks = [
   { href: "#about", label: "About" },
@@ -46,14 +41,7 @@ export const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
+              <SocialLink key={social.name} {...social} />
             ))}
           </div>
         </div>
