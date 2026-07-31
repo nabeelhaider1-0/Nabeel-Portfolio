@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useState } from "react";
+import { Reveal } from "@/components/Reveal";
 
 const testimonials = [
   {
@@ -60,37 +61,28 @@ export const Testimonials = () => {
       px-6 relative z-10"
       >
         {/* Section Header */}
-        <div
-          className="text-center max-w-3xl 
-        mx-auto mb-16"
-        >
-          <span
-            className="text-secondary-foreground 
-          text-sm font-medium tracking-wider 
-          uppercase animate-fade-in"
-          >
-            What People Say
-          </span>
-          <h2
-            className="text-4xl md:text-5xl 
-          font-bold mt-4 mb-6 animate-fade-in 
-          animation-delay-100 text-secondary-foreground"
-          >
-            Kind words from{" "}
-            <span
-              className="font-serif italic 
-            font-normal text-white"
-            >
-              amazing people.
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <Reveal>
+            <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
+              What People Say
             </span>
-          </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
+              Kind words from{" "}
+              <span className="font-serif italic font-normal text-white">
+                amazing people.
+              </span>
+            </h2>
+          </Reveal>
         </div>
 
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Main Testimonial */}
-            <div className="glass p-8 rounded-3xl md:p-12 glow-border animate-fade-in animation-delay-200">
+            <Reveal delay={0.15}>
+              <div className="glass p-8 rounded-3xl md:p-12 glow-border">
               <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
                 <Quote className="w-6 h-6 text-primary-foreground" />
               </div>
@@ -115,6 +107,7 @@ export const Testimonials = () => {
                 </div>
               </div>
             </div>
+            </Reveal>
 
             {/* Testimonials Navigation */}
             <div className="flex items-center justify-center gap-4 mt-8">

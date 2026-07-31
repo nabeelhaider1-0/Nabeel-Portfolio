@@ -7,6 +7,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/Button";
+import { Reveal } from "@/components/Reveal";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -95,23 +96,30 @@ export const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let's build{" "}
-            <span className="font-serif italic font-normal text-white">
-              something great.
+          <Reveal>
+            <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
+              Get In Touch
             </span>
-          </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together.
-          </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
+              Let's build{" "}
+              <span className="font-serif italic font-normal text-white">
+                something great.
+              </span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-muted-foreground">
+              Have a project in mind? I'd love to hear about it. Send me a message
+              and let's discuss how we can work together.
+            </p>
+          </Reveal>
         </div>
 
-        <div className="mx-auto grid max-w-5xl justify-items-center lg:grid-cols-2 gap-12">
-          <div className="glass w-full max-w-3xl sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+        <div className="mx-auto grid justify-items-center lg:grid-cols-2 gap-12">
+          <Reveal delay={0.3} className="w-full">
+            <div className="glass w-full sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
@@ -206,10 +214,11 @@ export const Contact = () => {
               )}
             </form>
           </div>
+          </Reveal>
 
           {/* Contact Info */}
-          <div className="space-y-6 w-full max-w-xl animate-fade-in animation-delay-400">
-            <div className="glass w-full sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+          <Reveal delay={0.4} className="space-y-6 w-full">
+            <div className="glass w-full sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
@@ -247,7 +256,7 @@ export const Contact = () => {
                 let's talk!
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

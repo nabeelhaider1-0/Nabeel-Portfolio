@@ -11,6 +11,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { motion as Motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const skills = [
@@ -81,34 +82,54 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
-            <div className="animate-fade-in">
+            <Motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Full-Stack-Developer • React Specialist
               </span>
-            </div>
+            </Motion.div>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-[2.5rem] md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
+              <Motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                className="text-[2.5rem] md:text-6xl lg:text-7xl font-bold leading-tight"
+              >
+                Crafting{" "}
+                <span className="text-primary glow-text">digitals</span>
                 <br />
                 experiences with
                 <br />
                 <span className="font-serif italic font-normal text-white">
                   precision.
                 </span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+              </Motion.h1>
+              <Motion.p
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="text-lg text-muted-foreground max-w-lg"
+              >
                 Hi, I'm Nabeel Haider — a Full-Stack Developer specializing in
                 both front-end and back-end technologies. I design and build
                 end-to-end scalable, performant web applications that provide
                 seamless experiences for users.
-              </p>
+              </Motion.p>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+            <Motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              className="flex flex-wrap gap-4"
+            >
               <a href="#contact">
                 <Button size="lg">
                   Contact Me <ArrowRight className="w-5 h-5" />
@@ -120,10 +141,15 @@ export const Hero = () => {
                   Download CV
                 </AnimatedBorderButton>
               </a>
-            </div>
+            </Motion.div>
 
             {/* Social Links */}
-            <div className="flex items-center sm:gap-4 gap-1 animate-fade-in animation-delay-400">
+            <Motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              className="flex items-center sm:gap-4 gap-1"
+            >
               <span className="sm:text-sm text-xs text-muted-foreground">
                 Follow me:{" "}
               </span>
@@ -156,10 +182,15 @@ export const Hero = () => {
                   {<social.icon className="w-5 h-5" />}
                 </a>
               ))}
-            </div>
+            </Motion.div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relative animate-fade-in animation-delay-300">
+          <Motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="relative"
+          >
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
               <div
@@ -193,11 +224,16 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Motion.div>
         </div>
 
         {/* Skills Section */}
-        <div className="mt-20 animate-fade-in animation-delay-600">
+        <Motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          className="mt-20"
+        >
           <p className="text-sm text-muted-foreground mb-6 text-center">
             Technologies I work with
           </p>
@@ -220,12 +256,14 @@ export const Hero = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Motion.div>
       </div>
 
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
-      animate-fade-in animation-delay-800 z-10"
+      <Motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <a
           href="#about"
@@ -234,7 +272,7 @@ export const Hero = () => {
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
-      </div>
+      </Motion.div>
     </section>
   );
 };
