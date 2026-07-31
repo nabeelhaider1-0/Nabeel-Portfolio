@@ -125,7 +125,7 @@ export const Experience = () => {
           <Reveal delay={0.1}>
             <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
               Experience that{" "}
-              <span className="font-serif italic font-normal text-white">
+              <span className="font-serif italic font-normal text-foreground">
                 {" "}
                 speaks volumes.
               </span>

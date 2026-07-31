@@ -70,7 +70,7 @@ export const Testimonials = () => {
           <Reveal delay={0.1}>
             <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
               Kind words from{" "}
-              <span className="font-serif italic font-normal text-white">
+              <span className="font-serif italic font-normal text-foreground">
                 amazing people.
               </span>
             </h2>

@@ -97,7 +97,7 @@ export const Hero = () => {
                 <br />
                 experiences with
                 <br />
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif italic font-normal text-foreground">
                   precision.
                 </span>
               </Motion.h1>

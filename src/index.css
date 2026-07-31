@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-background: #0f1418;
   --color-foreground: #f0f2f5;
@@ -23,7 +25,33 @@
   --color-surface: #1a2329;
 }
 
+.light {
+  color-scheme: light;
+  --color-background: #f6f8fb;
+  --color-foreground: #101418;
+
+  --color-card: #ffffff;
+
+  --color-primary: #0e9b90;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #e6ecf3;
+  --color-secondary-foreground: #0e9b90;
+
+  --color-muted: #eef2f7;
+  --color-muted-foreground: #5b6673;
+
+  --color-border: #dbe2ea;
+
+  --color-highlight: #e08e00;
+  --color-surface: #ffffff;
+}
+
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   button {
     cursor: pointer;
   }

@@ -43,7 +43,7 @@ export const About = () => {
             <Reveal delay={0.1}>
               <h2 className="text-4xl md:text-5xl font-bold leading-tight text-secondary-foreground">
                 Building the future,
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif italic font-normal text-foreground">
                   {" "}
                   one component at a time.
                 </span>
