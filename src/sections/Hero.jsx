@@ -57,7 +57,7 @@ export const Hero = () => {
           alt="Hero image"
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
       </div>
 
       {/* Green Dots */}
@@ -101,8 +101,7 @@ export const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-[2.5rem] md:text-6xl lg:text-7xl font-bold leading-tight"
               >
-                Crafting{" "}
-                <span className="text-primary glow-text">digitals</span>
+                Crafting <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with
                 <br />
@@ -154,33 +153,78 @@ export const Hero = () => {
                 Follow me:{" "}
               </span>
               {[
-                { icon: Github, href: "https://github.com/nabeelhaider1-0" },
+                {
+                  icon: Github,
+                  name: "GitHub",
+                  href: "https://github.com/nabeelhaider1-0",
+                },
                 {
                   icon: Linkedin,
+                  name: "LinkedIn",
                   href: "https://www.linkedin.com/in/nabeel-haider-76416818b/",
                 },
                 {
                   icon: Instagram,
+                  name: "Instagram",
                   href: "https://www.instagram.com/nabeelhaider1.0/",
                 },
                 {
                   icon: Facebook,
+                  name: "Facebook",
                   href: "https://www.facebook.com/nabeelhaider1.o?mibextid=ZbWKwL",
                 },
-                { icon: Twitter, href: "https://x.com/nabeelhaider1_0?s=09" },
+                {
+                  icon: Twitter,
+                  name: "X (Twitter)",
+                  href: "https://x.com/nabeelhaider1_0?s=09",
+                },
                 {
                   icon: Youtube,
+                  name: "YouTube",
                   href: "https://www.youtube.com/@nabeelhaider1.0",
                 },
               ].map((social, idx) => (
-                <a
+                <Motion.a
                   key={idx}
                   href={social.href}
                   target="_blank"
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  initial="rest"
+                  animate="rest"
+                  whileHover="hover"
+                  className="relative p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
-                </a>
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 pointer-events-none">
+                    <Motion.span
+                      variants={{
+                        rest: {
+                          opacity: 0,
+                          y: 6,
+                          scale: 0.9,
+                          transition: {
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 30,
+                          },
+                        },
+                        hover: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: {
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 10,
+                          },
+                        },
+                      }}
+                      className="relative block whitespace-nowrap px-3 py-1 rounded-lg bg-primary text-primary-foreground text-xs font-medium shadow-lg"
+                    >
+                      {social.name}
+                      <span className="absolute -bottom-1 left-1/2 w-2.5 h-2.5 -translate-x-1/2 rotate-45 bg-primary" />
+                    </Motion.span>
+                  </span>
+                </Motion.a>
               ))}
             </Motion.div>
           </div>
@@ -195,7 +239,7 @@ export const Hero = () => {
             <div className="relative max-w-md mx-auto">
               <div
                 className="absolute inset-0 
-              rounded-3xl bg-gradient-to-br 
+              rounded-3xl bg-linear-to-br 
               from-primary/30 via-transparent 
               to-primary/10 blur-2xl animate-pulse"
               />
@@ -240,11 +284,11 @@ export const Hero = () => {
           <div className="relative overflow-hidden">
             <div
               className="absolute left-0 top-0 bottom-0 w-32
-             bg-gradient-to-r from-background to-transparent z-10"
+             bg-linear-to-r from-background to-transparent z-10"
             />
             <div
               className="absolute right-0 top-0 bottom-0 w-32
-             bg-gradient-to-l from-background to-transparent z-10"
+             bg-linear-to-l from-background to-transparent z-10"
             />
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
