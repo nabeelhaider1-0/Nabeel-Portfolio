@@ -6,34 +6,34 @@ const testimonials = [
   {
     quote:
       "Nabeel is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Sarah Chen",
-    role: "CTO, Tech Innovators Inc.",
+    author: "Ehtisham Hameed",
+    role: "Group Chairman of TDO And Founder Infotech Pioneers.",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      "https://infoetec-images.s3.eu-west-1.amazonaws.com/infoetec-website-data/images/ceopic.png",
   },
   {
     quote:
       "Working with Nabeel was a game-changer for our project. He delivered ahead of schedule with code quality that set a new standard for our team.",
-    author: "Michael Rodriguez",
-    role: "Product Manager, Digital Solutions",
+    author: "Feeha Rashid",
+    role: "Product Manager at Infotech Pioneers",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+      "https://infoetec-images.s3.eu-west-1.amazonaws.com/infoetec-website-data/images/feeha.png",
   },
   {
     quote:
       "Nabeel's expertise in React and TypeScript helped us rebuild our entire frontend in record time. His architectural decisions continue to pay dividends.",
-    author: "Emily Watson",
-    role: "Engineering Lead, StartUp Labs",
+    author: "Usman Khalid",
+    role: "CTO at Infotech Pioneers",
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+      "https://infoetec-images.s3.eu-west-1.amazonaws.com/infoetec-website-data/images/usman.png",
   },
   {
     quote:
       "Not only is Nabeel technically brilliant, but he's also a fantastic communicator and team player. He elevated everyone around him.",
-    author: "David Kim",
-    role: "CEO, Innovation Hub",
+    author: "Syed Mubashir Bukhari",
+    role: "CEO at Infotech Pioneers",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      "https://media.licdn.com/dms/image/v2/C4E03AQF4K8lPUPp_5g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1561230779425?e=1787184000&v=beta&t=iWgQ0MSNumZHYp-IThnYTM5UrC-L9AvGj-iCtPNQblM",
   },
 ];
 
@@ -46,7 +46,7 @@ export const Testimonials = () => {
 
   const previous = () => {
     setActiveIdx(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   };
   return (
@@ -83,30 +83,30 @@ export const Testimonials = () => {
             {/* Main Testimonial */}
             <Reveal delay={0.15}>
               <div className="glass p-8 rounded-3xl md:p-12 glow-border">
-              <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                <Quote className="w-6 h-6 text-primary-foreground" />
-              </div>
+                <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                  <Quote className="w-6 h-6 text-primary-foreground" />
+                </div>
 
-              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
-                "{testimonials[activeIdx].quote}"
-              </blockquote>
+                <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
+                  "{testimonials[activeIdx].quote}"
+                </blockquote>
 
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonials[activeIdx].avatar}
-                  alt={testimonials[activeIdx].author}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
-                />
-                <div>
-                  <div className="font-semibold">
-                    {testimonials[activeIdx].author}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonials[activeIdx].role}
+                <div className="flex items-center gap-4">
+                  <img
+                    src={testimonials[activeIdx].avatar}
+                    alt={testimonials[activeIdx].author}
+                    className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                  />
+                  <div>
+                    <div className="font-semibold">
+                      {testimonials[activeIdx].author}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonials[activeIdx].role}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </Reveal>
 
             {/* Testimonials Navigation */}
