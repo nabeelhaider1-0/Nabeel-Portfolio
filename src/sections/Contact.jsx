@@ -5,6 +5,7 @@ import {
   Send,
   CheckCircle,
   AlertCircle,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -32,20 +33,69 @@ const contactInfo = [
   },
 ];
 
+const validateField = (name, value) => {
+  switch (name) {
+    case "name":
+      return /^[a-zA-Z\s'-]{2,50}$/.test(value)
+        ? null
+        : "Name must be 2-50 characters (letters, spaces, hyphens, apostrophes).";
+    case "email":
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+        ? null
+        : "Please enter a valid email address.";
+    case "message":
+      return value.trim().length >= 10
+        ? null
+        : "Message must be at least 10 characters.";
+    default:
+      return null;
+  }
+};
+
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
-    type: null, // 'success' or 'error'
+    type: null,
     message: "",
   });
 
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = {
+      name: validateField("name", formData.name),
+      email: validateField("email", formData.email),
+      message: validateField("message", formData.message),
+    };
+    const newTouched = { name: true, email: true, message: true };
+
+    setErrors(newErrors);
+    setTouched(newTouched);
+
+    if (Object.values(newErrors).some((err) => err !== null)) {
+      return;
+    }
 
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
@@ -76,6 +126,8 @@ export const Contact = () => {
         message: "Message sent successfully! I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
+      setErrors({});
+      setTouched({});
     } catch (err) {
       console.error("EmailJS error:", err);
       setSubmitStatus({
@@ -86,6 +138,16 @@ export const Contact = () => {
       setIsLoading(false);
     }
   };
+
+  const inputClasses = (field) => {
+    const isInvalid = touched[field] && errors[field];
+    return `w-full px-4 py-3 bg-surface rounded-xl border outline-none transition-all ${
+      isInvalid
+        ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500"
+        : "border-border focus:border-primary focus:ring-1 focus:ring-primary"
+    }`;
+  };
+
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
@@ -94,7 +156,6 @@ export const Contact = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Reveal>
             <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
@@ -131,33 +192,38 @@ export const Contact = () => {
                 <input
                   id="name"
                   type="text"
-                  required
                   placeholder="Your name..."
                   value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  name="name"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={inputClasses("name")}
                 />
+                {touched.name && errors.name && (
+                  <p className="text-red-400 text-xs mt-1">{errors.name}</p>
+                )}
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
-                  required
+                  id="email"
+                  type="email"
                   placeholder="your@email.com"
                   value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={inputClasses("email")}
                 />
+                {touched.email && errors.email && (
+                  <p className="text-red-400 text-xs mt-1">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -168,15 +234,18 @@ export const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  id="message"
                   rows={5}
-                  required
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  value={formData.message}
+                  name="message"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={inputClasses("message")}
                 />
+                {touched.message && errors.message && (
+                  <p className="text-red-400 text-xs mt-1">{errors.message}</p>
+                )}
               </div>
 
               <Button
@@ -186,7 +255,10 @@ export const Contact = () => {
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <>Sending...</>
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
                 ) : (
                   <>
                     Send Message
@@ -216,7 +288,6 @@ export const Contact = () => {
           </div>
           </Reveal>
 
-          {/* Contact Info */}
           <Reveal delay={0.4} className="space-y-6 w-full">
             <div className="glass w-full sm:px-8 py-8 sm:py-8 px-4 rounded-3xl border border-primary/30">
               <h3 className="text-xl font-semibold mb-6">
@@ -244,7 +315,6 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Card */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
