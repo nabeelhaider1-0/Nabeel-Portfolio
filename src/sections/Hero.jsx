@@ -2,6 +2,8 @@ import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { SocialLink } from "@/components/SocialLink";
+import { Magnetic } from "@/components/Magnetic";
+import { Tilt } from "@/components/Tilt";
 import { socialLinks } from "@/data/socialLinks";
 import { motion as Motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -41,15 +43,18 @@ export const Hero = () => {
     generateRandomDots();
   }, []); // Empty array means this effect runs once when the component mounts
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       {/* Bg */}
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
           alt="Hero image"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-40 light:opacity-30"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background light:via-background/40 light:from-background/10 light:to-background" />
       </div>
 
       {/* Green Dots */}
@@ -57,9 +62,8 @@ export const Hero = () => {
         {dots.map((dot, i) => (
           <div
             key={i}
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            className="absolute w-1.5 h-1.5 rounded-full opacity-100 bg-primary/60"
             style={{
-              backgroundColor: "#20B2A6",
               left: dot.left,
               top: dot.top,
               animation: `slow-drift ${dot.animationDuration} ease-in-out infinite`,
@@ -121,17 +125,21 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="flex flex-wrap gap-4"
             >
-              <a href="#contact">
-                <Button size="lg">
-                  Contact Me <ArrowRight className="w-5 h-5" />
-                </Button>
-              </a>
-              <a href="/Nabeel CV.pdf" download>
-                <AnimatedBorderButton>
-                  <Download className="w-5 h-5" />
-                  Download CV
-                </AnimatedBorderButton>
-              </a>
+              <Magnetic>
+                <a href="#contact">
+                  <Button size="lg">
+                    Contact Me <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a href="/Nabeel CV.pdf" download>
+                  <AnimatedBorderButton>
+                    <Download className="w-5 h-5" />
+                    Download CV
+                  </AnimatedBorderButton>
+                </a>
+              </Magnetic>
             </Motion.div>
 
             {/* Social Links */}
@@ -157,11 +165,15 @@ export const Hero = () => {
             className="relative"
           >
             {/* Profile Image */}
-            <div className="relative max-w-md mx-auto">
+            <Tilt
+              maxTilt={6}
+              className="relative max-w-md mx-auto"
+              style={{ transformStyle: "preserve-3d" }}
+            >
               <div
-                className="absolute inset-0 
-              rounded-3xl bg-linear-to-br 
-              from-primary/30 via-transparent 
+                className="absolute inset-0
+              rounded-3xl bg-linear-to-br
+              from-primary/30 via-transparent
               to-primary/10 blur-2xl animate-pulse"
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
@@ -188,7 +200,7 @@ export const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Tilt>
           </Motion.div>
         </div>
 

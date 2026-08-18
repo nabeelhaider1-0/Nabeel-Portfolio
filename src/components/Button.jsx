@@ -1,3 +1,5 @@
+import { motion as Motion } from "framer-motion";
+
 export const Button = ({
   className = "",
   size = "default",
@@ -14,10 +16,15 @@ export const Button = ({
   };
   const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
   return (
-    <button className={classes} {...props}>
+    <Motion.button
+      className={classes}
+      whileTap={{ scale: 0.96 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      {...props}
+    >
       <span className="relative flex items-center justify-center gap-2">
         {children}
       </span>
-    </button>
+    </Motion.button>
   );
 };

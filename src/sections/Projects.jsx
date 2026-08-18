@@ -1,6 +1,7 @@
 import { ArrowUpRight, Minus, Plus } from "lucide-react";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { Tilt } from "@/components/Tilt";
 import { useState } from "react";
 const projects = [
   {
@@ -207,7 +208,8 @@ export const Projects = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {projectsToShow.map((project, idx) => (
               <Reveal key={idx} delay={0.05 * (idx % 2)}>
-                <div className="group glass rounded-2xl overflow-hidden h-full">
+                <Tilt className="h-full">
+                  <div className="group glass rounded-2xl overflow-hidden h-full">
                   {/* Image */}
                   <div className="relative overflow-hidden aspect-21/10">
                     <img
@@ -216,9 +218,9 @@ export const Projects = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div
-                      className="absolute inset-0 
+                      className="absolute inset-0
                   bg-linear-to-t from-card via-card/50
-                   to-transparent opacity-60"
+                   to-transparent opacity-60 light:opacity-0 light:from-transparent light:via-transparent light:to-transparent"
                     />
                     {/* Overlay Links */}
                     <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -263,17 +265,13 @@ export const Projects = () => {
                     </div>
                   </div>
                 </div>
+                </Tilt>
               </Reveal>
             ))}
           </div>
           {/* Show More/Show Less Button */}
           <Reveal className="text-center mt-12" delay={0.3}>
-            <AnimatedBorderButton
-              id="projects-toggle"
-              onClick={handleToggleShow}
-              className="p-3 rounded-full glass hover:bg-primary
-                hover:text-primary-foreground transition-all"
-            >
+            <Button id="projects-toggle" onClick={handleToggleShow} size="lg">
               {showAll ? (
                 <>
                   View Less Projects <Minus className="w-5 h-5" />
@@ -283,7 +281,7 @@ export const Projects = () => {
                   View More Projects <Plus className="w-5 h-5" />
                 </>
               )}
-            </AnimatedBorderButton>
+            </Button>
           </Reveal>
         </div>
       </div>

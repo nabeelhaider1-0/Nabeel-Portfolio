@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Magnetic } from "@/components/Magnetic";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/theme";
 import { useEffect, useState } from "react";
@@ -15,6 +16,13 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const { theme, toggleTheme } = useTheme();
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    const target = document.querySelector(href);
+    window.lenis?.scrollTo(target, { duration: 1 });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +81,7 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`px-4 py-2 text-sm rounded-full transition-all ${
                   activeSection === link.href.slice(1)
                     ? "text-primary bg-primary/10"
@@ -102,9 +111,11 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="#contact">
-              <Button size="sm">Contact Me</Button>
-            </a>
+            <Magnetic strength={0.3}>
+              <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
+                <Button size="sm">Contact Me</Button>
+              </a>
+            </Magnetic>
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,7 +136,7 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-lg py-2 transition-all ${
                   activeSection === link.href.slice(1)
                     ? "text-primary"
@@ -137,8 +148,10 @@ export const Navbar = () => {
             ))}
 
             {/* Direct link to contact or trigger scroll */}
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button>Contact Me</Button>
+            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
+              <Magnetic strength={0.3}>
+                <Button>Contact Me</Button>
+              </Magnetic>
             </a>
           </div>
         </div>

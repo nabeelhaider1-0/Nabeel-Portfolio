@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 
 @theme {
   --color-background: #0f1418;
@@ -27,8 +28,8 @@
 
 .light {
   color-scheme: light;
-  --color-background: #f6f8fb;
-  --color-foreground: #101418;
+  --color-background: #f4f7fb;
+  --color-foreground: #0e1318;
 
   --color-card: #ffffff;
 
@@ -38,10 +39,10 @@
   --color-secondary: #e6ecf3;
   --color-secondary-foreground: #0e9b90;
 
-  --color-muted: #eef2f7;
+  --color-muted: #e9eef5;
   --color-muted-foreground: #5b6673;
 
-  --color-border: #dbe2ea;
+  --color-border: #a9b6c5;
 
   --color-highlight: #e08e00;
   --color-surface: #ffffff;
@@ -72,6 +73,7 @@
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
   }
 
   .glass-strong {
@@ -80,9 +82,24 @@
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   }
 
+  .light .glass {
+    border-color: color-mix(in srgb, var(--color-border) 90%, transparent);
+    box-shadow: 0 6px 20px -8px rgb(14 155 144 / 0.16);
+  }
+
+  .light .glass-strong {
+    border-color: color-mix(in srgb, var(--color-border) 90%, transparent);
+    box-shadow: 0 8px 24px -12px rgb(14 155 144 / 0.2);
+  }
+
   .glow-text {
     text-shadow: 0 0 30px
       color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .light .glow-text {
+    text-shadow: 0 0 24px
+      color-mix(in srgb, var(--color-primary) 30%, transparent);
   }
 
   .glow-border {
@@ -217,5 +234,39 @@
     box-shadow: 0 0 40px
         color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  .cursor-glow {
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-primary) 7%, transparent),
+      transparent 70%
+    );
+    mix-blend-mode: screen;
+    opacity: 0.7;
+  }
+
+  .light .cursor-glow {
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-primary) 8%, transparent),
+      transparent 70%
+    );
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float,
+  .animate-fade-in,
+  .animated-border-path,
+  .theme-transition-overlay {
+    animation: none !important;
+  }
+
+  .cursor-glow {
+    display: none;
   }
 }

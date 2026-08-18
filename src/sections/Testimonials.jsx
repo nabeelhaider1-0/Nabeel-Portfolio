@@ -1,4 +1,5 @@
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { AnimatePresence, motion as Motion } from "framer-motion";
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
@@ -87,25 +88,35 @@ export const Testimonials = () => {
                   <Quote className="w-6 h-6 text-primary-foreground" />
                 </div>
 
-                <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
-                  "{testimonials[activeIdx].quote}"
-                </blockquote>
+                <AnimatePresence mode="wait">
+                  <Motion.div
+                    key={activeIdx}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -16 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
+                      "{testimonials[activeIdx].quote}"
+                    </blockquote>
 
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonials[activeIdx].avatar}
-                    alt={testimonials[activeIdx].author}
-                    className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
-                  />
-                  <div>
-                    <div className="font-semibold">
-                      {testimonials[activeIdx].author}
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={testimonials[activeIdx].avatar}
+                        alt={testimonials[activeIdx].author}
+                        className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                      />
+                      <div>
+                        <div className="font-semibold">
+                          {testimonials[activeIdx].author}
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {testimonials[activeIdx].role}
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonials[activeIdx].role}
-                    </div>
-                  </div>
-                </div>
+                  </Motion.div>
+                </AnimatePresence>
               </div>
             </Reveal>
 

@@ -88,8 +88,8 @@ export const About = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             {highlights.map((item, idx) => (
               <Reveal key={idx} delay={0.1 + idx * 0.1}>
-                <div className="glass p-6 rounded-2xl h-full">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
+                <div className="glass p-6 rounded-2xl h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-all duration-300 hover:bg-primary/20 group-hover:scale-105 hover:scale-110">
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
