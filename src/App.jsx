@@ -6,6 +6,7 @@ import { Experience } from "@/sections/Experience";
 import { Testimonials } from "@/sections/Testimonials";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "./layout/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 import Lenis from "lenis";
 import { useEffect } from "react";
 
@@ -42,6 +43,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
