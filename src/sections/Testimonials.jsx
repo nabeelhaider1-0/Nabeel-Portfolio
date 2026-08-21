@@ -34,7 +34,7 @@ const testimonials = [
     author: "Syed Mubashir Bukhari",
     role: "CEO at Infotech Pioneers",
     avatar:
-      "https://media.licdn.com/dms/image/v2/C4E03AQF4K8lPUPp_5g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1561230779425?e=1787184000&v=beta&t=iWgQ0MSNumZHYp-IThnYTM5UrC-L9AvGj-iCtPNQblM",
+      "https://media.licdn.com/dms/image/v2/C4E03AQF4K8lPUPp_5g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1561230779456?e=1788998400&v=beta&t=vvMfTd15cbUJW3xhblw3YxKtIYgXPIgIJ9-Dp6lPPIs",
   },
 ];
 
